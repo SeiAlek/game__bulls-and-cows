@@ -28,6 +28,8 @@ h1, h2 {
 
 .button {
   display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-transform: capitalize;
   border-radius: 8px;
   -webkit-transition: background-color 0.3s, border-color 0.3s, opacity 0.3s, color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
@@ -37,6 +39,9 @@ h1, h2 {
   opacity: 1;
   outline: none;
   cursor: pointer; }
+  @media screen and (max-width: 767px) {
+    .button {
+      width: 100%; } }
   .button__primary {
     padding: 16px 32px;
     font-size: 24px;
@@ -123,6 +128,12 @@ h1, h2 {
   background-repeat: no-repeat;
   -webkit-transition: height 0.3s;
   transition: height 0.3s; }
+  @media screen and (max-width: 767px) {
+    .game__content::before {
+      height: 30vh; } }
+
+.game__button {
+  padding: 0 32px; }
 
 .game__start-button {
   margin: 0 auto;
@@ -130,10 +141,11 @@ h1, h2 {
   .game__start-button::after {
     content: "Начать игру!"; }
   .game__start-button--again::after {
-    content: "Начать с начала!"; }
+    content: "Начать сначала!"; }
 
 .game__form {
   display: none;
+  padding: 0 32px;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s; }
@@ -142,6 +154,8 @@ h1, h2 {
     opacity: 1; }
 
 .game__prev-attempts-list {
+  display: grid;
+  gap: 16px;
   margin: 32px 0; }
 
 .game__prev-attempt {
@@ -189,6 +203,9 @@ h1, h2 {
   position: absolute;
   top: 64px;
   width: 100%; }
+  @media screen and (max-width: 767px) {
+    .rules {
+      top: 16px; } }
   .rules__content {
     -webkit-box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
@@ -204,6 +221,9 @@ h1, h2 {
     transition: -webkit-transform 0.3s;
     transition: transform 0.3s;
     transition: transform 0.3s, -webkit-transform 0.3s; }
+    @media screen and (max-width: 767px) {
+      .rules__content {
+        margin-top: 192px; } }
     .rules__content--show {
       -webkit-transform: translateY(0);
               transform: translateY(0); }
@@ -218,6 +238,9 @@ h1, h2 {
     top: 16px;
     right: 16px;
     z-index: 100; }
+    @media screen and (max-width: 767px) {
+      .rules__button {
+        top: -24px; } }
     .rules__button::after {
       content: "?"; }
     .rules__button--cross {
@@ -226,6 +249,10 @@ h1, h2 {
       border-color: red;
       -webkit-transform: translateY(256px);
               transform: translateY(256px); }
+      @media screen and (max-width: 767px) {
+        .rules__button--cross {
+          -webkit-transform: translateY(184px);
+                  transform: translateY(184px); } }
       .rules__button--cross:hover, .rules__button--cross:focus {
         -webkit-box-shadow: 0 6px 25px rgba(255, 0, 0, 0.46);
                 box-shadow: 0 6px 25px rgba(255, 0, 0, 0.46);

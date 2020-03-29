@@ -13,9 +13,16 @@
       background-size: contain;
       background-repeat: no-repeat;
       transition: height 0.3s;
+
+      @media screen and (max-width: $maxMobileWidth) {
+        height: 30vh;
+      }
     }
   }
 
+  &__button {
+    padding: 0 ($unit * 2);
+  }
   &__start-button {
     margin: 0 auto;
     opacity: 1;
@@ -26,13 +33,14 @@
 
     &--again {
       &::after {
-        content: "Начать с начала!";
+        content: "Начать сначала!";
       }
     }
   }
 
   &__form {
     display: none;
+    padding: 0 ($unit * 2);
     opacity: 0;
     transition: opacity 0.3s;
 
@@ -43,6 +51,8 @@
   }
 
   &__prev-attempts-list {
+    display: grid;
+    gap: $unit;
     margin: ($unit * 2) 0;
   }
 

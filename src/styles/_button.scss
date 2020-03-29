@@ -2,6 +2,7 @@
 
 .button {
   display: block;
+  box-sizing: border-box;
   text-transform: capitalize;
   border-radius: ($unit / 2);
   transition: transform 0.3s,
@@ -13,6 +14,10 @@
   opacity: 1;
   outline: none;
   cursor: pointer;
+
+  @media screen and (max-width: $maxMobileWidth) {
+    width: 100%;
+  }
 
   &__primary {
     padding: $unit ($unit * 2);

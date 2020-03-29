@@ -5,6 +5,10 @@
   top: ($unit * 4);
   width: 100%;
 
+  @media screen and (max-width: $maxMobileWidth) {
+    top: $unit;
+  }
+
   &__content {
     @include shadow;
     position: absolute;
@@ -15,6 +19,10 @@
     border-radius: $unit;
     transform: translateY(-200vh);
     transition: transform 0.3s;
+
+    @media screen and (max-width: $maxMobileWidth) {
+      margin-top: ($unit * 12);
+    }
 
     &--show {
       transform: translateY(0);
@@ -37,6 +45,10 @@
     right: $unit;
     z-index: 100;
 
+    @media screen and (max-width: $maxMobileWidth) {
+      top: (-$unit * 1.5);
+    }
+
     &::after {
       content: "?";
     }
@@ -46,6 +58,10 @@
       background-color: $colorLight;
       border-color: $colorDanger;
       transform: translateY(($unit * 16));
+
+      @media screen and (max-width: $maxMobileWidth) {
+        transform: translateY(($unit * 11.5));
+      }
 
       &:hover,
       &:focus {

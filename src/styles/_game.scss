@@ -1,0 +1,88 @@
+@import "utils";
+
+.game {
+  &__content {
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 50vh;
+      margin-bottom: ($unit * 4);
+      background-image: url(../images/bulls-and-cows.jpg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: height 0.3s;
+    }
+  }
+
+  &__start-button {
+    margin: 0 auto;
+    opacity: 1;
+
+    &::after {
+      content: "Начать игру!";
+    }
+
+    &--again {
+      &::after {
+        content: "Начать с начала!";
+      }
+    }
+  }
+
+  &__form {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &--show {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  &__prev-attempts-list {
+    margin: ($unit * 2) 0;
+  }
+
+  &__prev-attempt {
+    text-align: center;
+
+    &:last-child {
+      font-size: ($unit * 1.2);
+      font-weight: bold;
+    }
+  }
+
+  &__win-block {
+    @include shadowGreen;
+    display: grid;
+    grid-template-columns: ($unit * 15) 1fr;
+    gap: 0 ($unit * 4);
+    align-items: start;
+    margin: ($unit * 4) 0;
+    padding-right: ($unit * 4);
+    color: #348c34;
+    text-align: center;
+    background-color: #ace0ac;
+    border-radius: $unit;
+
+    &::before {
+      content: "";
+      grid-column: 1;
+      grid-row: 1 / 3;
+      display: block;
+      width: ($unit * 15);
+      height: ($unit * 15);
+      background-image: url(../images/win.png);
+      background-position: center;
+      background-size: contain;
+      border-radius: $unit;
+    }
+  }
+
+  &__win-header {
+    align-self: end;
+  }
+}

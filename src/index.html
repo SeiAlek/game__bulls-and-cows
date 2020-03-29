@@ -1,13 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Bulls and Cows</title>
     <link rel="stylesheet" href="./styles/main.css">
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
-    <script type="text/javascript" src="scripts/main.js"></script>
+  <body class="page">
+    <div class="page__container">
+      <section class="page__content game">
+        <h1 class="game__header">Bulls and Cows</h1>
+        <div class="game__content" id="gameContent">
+          <div class="game__form" id="gameForm">
+            <form action="#" method="get" id="guessNumberForm" class="form">
+              <input
+              type="text"
+              class="form__field"
+              id="guessNumberInput"
+              required placeholder="****"
+              pattern="[0-9]{4}"
+              minlength="4"
+              maxlength="4"
+              autocomplete="off"
+            >
+            <button
+              type="submit"
+              class="form__button button button__secondary"
+              id="btnSentGuessNumber"
+            >Отправить</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <button
+        type="button"
+        class="game__start-button button button__primary"
+        id="btnStartGame"
+      ></button>
+      <section class="page__content rules">
+        <button class="rules__button button button__primary button__round" id="btnRules"></button>
+        <div class="rules__content" id="rules">
+          <h2 class="rules__header">Правила игры "Bulls and Cows"</h2>
+          <ul class="rules__list">
+            <li class="rules__item">
+              Компьютер загадывает случайное число из 4 разных цифр.
+            </li>
+            <li class="rules__item">
+              Игрок вводит 4 значное число с разными цифрами.
+            </li>
+            <li class="rules__item">
+              Компьтер отображает результат (введённое число: сколько быков, сколько коров).
+              Пример: загадано 1234, введено 1345, результат: 1 бык (единица угадана на своём месте)
+              и 2 коровы (3 и 4 присутствуют но не на своих местах).
+            </li>
+            <li class="rules__item">
+              Всё повторяется до тех пор пока игрок не угадает либо не сдастся.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <script type="text/javascript" src="./scripts/main.js"></script>
   </body>
 </html>

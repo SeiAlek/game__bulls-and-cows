@@ -1,0 +1,63 @@
+@import "utils";
+
+.rules {
+  position: absolute;
+  top: ($unit * 4);
+  width: 100%;
+
+  &__content {
+    @include shadow;
+    position: absolute;
+    margin-top: ($unit * 16);
+    padding: ($unit);
+    background-color: $colorLight;
+    border: 1px solid $colorPrimary;
+    border-radius: $unit;
+    transform: translateY(-200vh);
+    transition: transform 0.3s;
+
+    &--show {
+      transform: translateY(0);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: $unit;
+    margin: ($unit * 3) ($unit * 2) ($unit * 3);
+  }
+
+  &__item {
+    list-style: circle;
+  }
+
+  &__button {
+    position: absolute;
+    top: $unit;
+    right: $unit;
+    z-index: 100;
+
+    &::after {
+      content: "?";
+    }
+
+    &--cross {
+      color: $colorDanger;
+      background-color: $colorLight;
+      border-color: $colorDanger;
+      transform: translateY(($unit * 16));
+
+      &:hover,
+      &:focus {
+        @include shadowRed;
+        color: $colorLight;
+        background-color: $colorDanger;
+        border-color: $colorDanger;
+      }
+
+      &::after {
+        content: "x";
+      }
+    }
+  }
+}

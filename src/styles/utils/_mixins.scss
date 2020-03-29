@@ -4,3 +4,19 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin shadow {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+@mixin shadowBlue {
+  box-shadow: 0 6px 25px rgba(0, 117, 255, 0.46);
+}
+
+@mixin shadowRed {
+  box-shadow: 0 6px 25px rgba(255, 0, 0, 0.46);
+}
+
+@mixin shadowGreen {
+  box-shadow: 0 6px 25px rgba(52, 144, 106, 0.5);
+}

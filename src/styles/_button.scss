@@ -1,0 +1,58 @@
+@import "utils";
+
+.button {
+  display: block;
+  text-transform: capitalize;
+  border-radius: ($unit / 2);
+  transition: transform 0.3s,
+    background-color 0.3s,
+    border-color 0.3s,
+    opacity 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
+  opacity: 1;
+  outline: none;
+  cursor: pointer;
+
+  &__primary {
+    padding: $unit ($unit * 2);
+    font-size: ($unit * 1.5);
+    color: $colorLight;
+    background-color: $colorBtn;
+    border: 1px solid $colorBtn;
+
+    &:hover,
+    &:focus {
+      @include shadowBlue;
+      background-color: $colorBtnActive;
+      border-color: $colorBtnDark;
+    }
+  }
+
+  &__secondary {
+    padding: ($unit / 4) ($unit);
+    color: $colorLight;
+    background-color: $colorBtn;
+    border: 1px solid $colorBtn;
+
+    &:hover,
+    &:focus {
+      @include shadowBlue;
+      background-color: $colorBtnActive;
+      border-color: $colorBtnDark;
+    }
+  }
+
+  &__round {
+    height: ($unit * 4);
+    width: ($unit * 4);
+    padding: 0;
+    text-align: center;
+    line-height: ($unit * 4);
+    border-radius: 50%;
+  }
+
+  &--hide {
+    opacity: 0;
+  }
+}

@@ -8,12 +8,12 @@ const rules = document.getElementById('rules');
 const guessNumberForm = document.getElementById('guessNumberForm');
 const btnSentGuessNumber = document.getElementById('btnSentGuessNumber');
 
-const errorMesages = {
+const ERROR_MESSAGES = {
   repeats: 'В числе не должны повторяться цифры!\n',
   short: 'Нужно ввести четыре цифры!\n',
   nan: 'Нужно вводить только цифры!\n',
 };
-const winMessages = {
+const WIN_MESSAGES = {
   fast: 'Поздравляем, впечатляющий результат!!!',
   ordinary: 'Поздравляем с победой!',
   long: 'Поздравляем, Вы всё таки смогли!',
@@ -79,16 +79,16 @@ function checkInput(input) {
   const errorsList = new Set();
 
   if (isNaN(input)) {
-    errorsList.add(errorMesages.nan);
+    errorsList.add(ERROR_MESSAGES.nan);
   }
 
   if (input.length !== 4) {
-    errorsList.add(errorMesages.short);
+    errorsList.add(ERROR_MESSAGES.short);
   }
 
   for (let i = 0; i < input.length; i++) {
     if (repeat.has(input[i])) {
-      errorsList.add(errorMesages.repeats);
+      errorsList.add(ERROR_MESSAGES.repeats);
     }
     repeat.add(input[i]);
   }
@@ -166,11 +166,11 @@ function printWinResult() {
   `;
 
   if (counter < 7) {
-    winBlockHeader.append(winMessages.fast);
+    winBlockHeader.append(WIN_MESSAGES.fast);
   } else if (counter > 15) {
-    winBlockHeader.append(winMessages.long);
+    winBlockHeader.append(WIN_MESSAGES.long);
   } else {
-    winBlockHeader.append(winMessages.ordinary);
+    winBlockHeader.append(WIN_MESSAGES.ordinary);
   }
 
   winBlockHeader.classList.add('game__win-header');

@@ -1,0 +1,29 @@
+@import "utils";
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
+  max-width: ($unit * 30);
+  margin: 0 auto;
+
+  &__field {
+    width: 100%;
+    box-sizing: border-box;
+    padding: ($unit / 2) $unit;
+    text-align: center;
+    border: 1px solid $colorBtn;
+    border-radius: ($unit / 2);
+    outline: none;
+    transition: box-shadow;
+
+    &:focus {
+      @include shadowBlue;
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+}

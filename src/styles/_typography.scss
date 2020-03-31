@@ -1,3 +1,23 @@
+html {
+  font-family: $font-family;
+  font-size: $unit;
+  color: $colorPrimary;
+}
+
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
 h1 {
-  @extend %h1;
+  @extend %h;
+}
+
+h2 {
+  @extend %h;
 }

@@ -1,7 +1,9 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "button";
+@import "form";
 
-body {
-  background: $c-gray;
-}
+@import "page";
+@import "game";
+@import "rules";
